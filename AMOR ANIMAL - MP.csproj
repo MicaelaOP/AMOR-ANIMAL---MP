@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{949A0490-A92D-419C-AE5E-957FC6D8168F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AMOR_ANIMAL___MP</RootNamespace>
+    <AssemblyName>AMOR ANIMAL - MP</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bienvenidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenidos.Designer.cs">
+      <DependentUpon>Bienvenidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Michis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Michis.Designer.cs">
+      <DependentUpon>Michis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perritos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perritos.Designer.cs">
+      <DependentUpon>Perritos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda.Designer.cs">
+      <DependentUpon>Busqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos Usuario.cs" />
+    <Compile Include="InicioS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioS.Designer.cs">
+      <DependentUpon>InicioS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terminos y Condiciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terminos y Condiciones.Designer.cs">
+      <DependentUpon>Terminos y Condiciones.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bienvenidos.resx">
+      <DependentUpon>Bienvenidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Michis.resx">
+      <DependentUpon>Michis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perritos.resx">
+      <DependentUpon>Perritos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda.resx">
+      <DependentUpon>Busqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioS.resx">
+      <DependentUpon>InicioS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terminos y Condiciones.resx">
+      <DependentUpon>Terminos y Condiciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pachi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lola.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cielo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\polenta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\luz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono principal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registro.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seccion michi.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seccion perrito.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicio sesion.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\punter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoperri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoperri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puntero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\michiBoton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fb704964-db39-4436-aa50-ed99fc979466.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TERMINOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TERMINOS.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
