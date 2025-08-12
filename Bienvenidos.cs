@@ -49,7 +49,7 @@ namespace AMOR_ANIMAL___MP
         {
             Lintro.Text = "¡Hola, amante de los peluditos!🐶😺\n"+"¿Listo para encontrar a tu nuevo mejor amigo?";
             Lintro.Font = new Font("Segoe UI", 14, FontStyle.Regular);
-            Lintro.ForeColor = Color.DarkSlateGray;
+       
 
         }
 

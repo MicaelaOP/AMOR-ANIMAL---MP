@@ -59,6 +59,7 @@
             // 
             this.RTBTerminos.Location = new System.Drawing.Point(24, 74);
             this.RTBTerminos.Name = "RTBTerminos";
+            this.RTBTerminos.ReadOnly = true;
             this.RTBTerminos.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.RTBTerminos.Size = new System.Drawing.Size(387, 262);
             this.RTBTerminos.TabIndex = 2;
@@ -121,7 +122,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FTerminosC";
             this.Text = "Terminos y Condiciones";
-            this.Load += new System.EventHandler(this.FTerminosC_Load);
             this.PBotones.ResumeLayout(false);
             this.PBotones.PerformLayout();
             this.ResumeLayout(false);

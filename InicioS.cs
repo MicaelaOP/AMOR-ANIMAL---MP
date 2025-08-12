@@ -20,31 +20,31 @@ namespace AMOR_ANIMAL___MP
         private void BIniciarS_Click(object sender, EventArgs e)
         {
             string usuarioIngresado = TBUsuario.Text.Trim(); 
-            string claveIngresada = TBClaveInicio.Text.Trim(); 
+            string claveIngresada = TBClaveInicio.Text.Trim();
 
             // Validar si el usuario existe
             if (usuarioIngresado != Datos_Usuario.Usuario)
             {
                 MessageBox.Show("Usuario no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TBUsuario.Focus(); 
-                return;
-            }
+                TBUsuario.Focus();
 
-            // Validar si la clave es incorrecta
-            if (claveIngresada != Datos_Usuario.Clave)
+            }    
+            else if (claveIngresada != Datos_Usuario.Clave)
             {
                 MessageBox.Show("Clave incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TBClaveInicio.Focus(); 
-                return;
+                
             }
-
-            // Si todo está correcto
-            MessageBox.Show("Inicio de sesión exitoso", $"Hola {Datos_Usuario.Nombre.ToUpper()}", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            else
+            {
+                // Si todo está correcto
+                MessageBox.Show("Inicio de sesión exitoso", $"Hola {Datos_Usuario.Nombre.ToUpper()}", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
-            FBusqueda busquedaForm = new FBusqueda();
-            busquedaForm.Show(); 
-            this.Close(); 
+                FBusqueda busquedaForm = new FBusqueda();
+                busquedaForm.Show(); 
+                this.Close(); 
+            }
+               
         }
 
         private void BCancelar_Click(object sender, EventArgs e)

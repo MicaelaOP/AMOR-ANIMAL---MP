@@ -168,8 +168,6 @@ namespace AMOR_ANIMAL___MP
         }
 
         
-        //private void FTerminosC_Load(object sender, EventArgs e)
-        //{
-        //}
+        
     }
 }
