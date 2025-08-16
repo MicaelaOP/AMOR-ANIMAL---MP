@@ -41,11 +41,22 @@ namespace AMOR_ANIMAL___MP
                 else
                 {
                     MessageBox.Show("Adopción cancelada. Debes aceptar los términos y condiciones para continuar con la adopción.", "Adopción Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    DialogResult respuesta = MessageBox.Show("¿Desea volver al menú de busqueda?", "Volver al menú", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult respuesta = MessageBox.Show("¿Desea volver al menú de busqueda de michi?", "Volver al menú", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (respuesta == DialogResult.Yes)
                     {
-                        VolverMenuBusqueda();
+                        Busqueda_Gato formMichi = new Busqueda_Gato();
+                        formMichi.Show();
+                        this.Close();   
+                    }
+                    else if (respuesta== DialogResult.No)
+                    {
+                        DialogResult respuesta2 = MessageBox.Show("¿Desea volver al menú de busqueda ?", "Volver al menú", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if(respuesta2 == DialogResult.Yes)
+                        {
+                            VolverMenuBusqueda();
+                        }
                     }
                 }
 

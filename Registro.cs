@@ -40,23 +40,28 @@ namespace AMOR_ANIMAL___MP
                 TBNombre.Focus();
                 
             }
-             else if (apellido == "")
-             {
+            else if (apellido == "")
+            {
                 MessageBox.Show("DEBE INGRESAR UN APELLIDO", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TBApellido.Focus();
 
-             }
+            }
+            else if (!MTBTel.MaskFull)
+            {
+                MessageBox.Show("DEBE INGRESAR UN NUMERO DE TELEFONO", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MTBTel.Focus();
+            }
             else if (email == "")
             {
                 MessageBox.Show("DEBE INGRESAR UN EMAIL", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TBEmail.Focus();
-              
+
             }
             else if (clave == "")
             {
                 MessageBox.Show("DEBE INGRESAR UNA CONTRASEÑA", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TBClave.Focus();
-      
+
             }
             else
             {
@@ -74,70 +79,67 @@ namespace AMOR_ANIMAL___MP
                         posPunto = indice;
                     }
                 }
-            }
-
-
-            if ((!arroba) || (!punto) || (posArroba >= posPunto))
-            {
-                MessageBox.Show("DEBE INGRESAR UN EMAIL VALIDO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TBEmail.Focus();
-            
-            }
-            else if (clave.Length < 8)
-            {
-                MessageBox.Show("LA CONTRASEÑA DEBE TENER MINIMO 8 CARACTERES", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TBClave.Focus();
-                
-            }
-            else
-            {
-                for (int indice = 0; indice < clave.Length; indice++)
+                if ((!arroba) || (!punto) || (posArroba >= posPunto))
                 {
-                      char c = clave[indice];
-                      if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-                      {
-                         cantLetras++;
-                      }
-                      else if ((c >= '0') && (c <= '9'))
-                      {
-                         cantNumeros++;
-                      }
-                      else if ((c >= '!') && (c <= '/') || (c >= ':') && (c <= '@') || (c >= '[') && (c <= '`') || (c >= '{') && (c <= '~'))
-                      {
-                        cantSimbolos++;
-                      }
+                    MessageBox.Show("DEBE INGRESAR UN EMAIL VALIDO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TBEmail.Focus();
+
                 }
-            }
-                
-
-            if ((cantLetras == 0) || (cantNumeros == 0) || (cantSimbolos == 0))
-            {
-                MessageBox.Show("LA CONTRASEÑA DEBE TENER AL MENOS UNA LETRA, UN NUMERO Y UN SIMBOLO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TBClave.Focus();
-                
-            }
-            else
-            {
-                string mensaje = $"¿Está de acuerdo con los siguientes datos?\n" + $"Nombre: {nombre}\n" + $"Apellido: {apellido}\n" + $"Email: {email}\n" + $"Clave: {clave}";
-
-                DialogResult resultado = MessageBox.Show(mensaje, "Confirmación", MessageBoxButtons.YesNo);
-                if (resultado == DialogResult.Yes)
+                else if (clave.Length < 8)
                 {
-               
-                      Datos_Usuario.Usuario = $"{nombre[0]}{apellido[0]}".ToUpper(); // Crear el usuario
-                      Datos_Usuario.Clave = clave;
-                      Datos_Usuario.Nombre = nombre; 
+                    MessageBox.Show("LA CONTRASEÑA DEBE TENER MINIMO 8 CARACTERES", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TBClave.Focus();
 
-                
-                    MessageBox.Show($"Usuario creado exitosamente:\n\nUsuario: {Datos_Usuario.Usuario}\nClave: {Datos_Usuario.Clave}", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                    FInicioSesion inicioSesionForm = new FInicioSesion();
-                    inicioSesionForm.Show();
-                    this.Close(); 
+                }
+                else
+                {
+                    for (int indice = 0; indice < clave.Length; indice++)
+                    {
+                        char c = clave[indice];
+                        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+                        {
+                            cantLetras++;
+                        }
+                        else if ((c >= '0') && (c <= '9'))
+                        {
+                            cantNumeros++;
+                        }
+                        else if ((c >= '!') && (c <= '/') || (c >= ':') && (c <= '@') || (c >= '[') && (c <= '`') || (c >= '{') && (c <= '~'))
+                        {
+                            cantSimbolos++;
+                        }
+                    }
+                    if ((cantLetras == 0) || (cantNumeros == 0) || (cantSimbolos == 0))
+                    {
+                        MessageBox.Show("LA CONTRASEÑA DEBE TENER AL MENOS UNA LETRA, UN NUMERO Y UN SIMBOLO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TBClave.Focus();
+
+                    }
+                    else
+                    {
+                        string mensaje = $"¿Está de acuerdo con los siguientes datos?\n" + $"Nombre: {nombre}\n" + $"Apellido: {apellido}\n" + $"Email: {email}\n" + $"Clave: {clave}";
+
+                        DialogResult resultado = MessageBox.Show(mensaje, "Confirmación", MessageBoxButtons.YesNo);
+
+                        if (resultado == DialogResult.Yes)
+                        {
+
+                            Datos_Usuario.Usuario = $"{nombre[0]}{apellido[0]}".ToUpper(); // Crear el usuario
+                            Datos_Usuario.Clave = clave;
+                            Datos_Usuario.Nombre = nombre;
+
+                            MessageBox.Show($"Usuario creado exitosamente:\n\nUsuario: {Datos_Usuario.Usuario}\nClave: {Datos_Usuario.Clave}", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            FInicioSesion inicioSesionForm = new FInicioSesion();
+                            inicioSesionForm.Show();
+                            this.Close();
+                        }
+
+                    }
+
                 }
 
             }
-
 
         }
     }

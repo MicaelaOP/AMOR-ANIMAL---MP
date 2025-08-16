@@ -140,6 +140,7 @@
             this.MTBTel.Name = "MTBTel";
             this.MTBTel.Size = new System.Drawing.Size(151, 20);
             this.MTBTel.TabIndex = 6;
+            this.MTBTel.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // PBFONDO2
             // 
